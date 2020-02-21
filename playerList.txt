@@ -1,0 +1,40 @@
+Joe Burrow,LSU,26400100,Quaterback,1
+Tua Tagovailoa,Alabama,20300100,Quaterback,2
+Justin Herbet,Oregon,17420300,Quaterback,3
+Jordan Love,Utah St,13100145,Quaterback,4
+Jake Fromm,Georgia,10300000,Quaterback,5
+D.Andre Swift,Georgia,24500100,Running Back,1
+Jonathan Taylor,Wiscosnsin,19890200,Running Back,2
+J.K. Dobbins,Ohio St,18700800,Running Back,3
+Zack Moss,Utah,15000000,Running Back,4
+Cam Akers,Florida St,11600400,Running Back,5
+CeeDee Lamb,Oklahoma,23400000,Wide Receiver,1
+Jerry Jeudy,Alabama,21900300,Wide Receiver,2
+Tee Higgins,Clemson,19300230,Wide Receiver,3
+Hunry Rugs III,Alabama,13400230,Wide Receiver,4
+Tyler Johnson,Minnesota,10000000,Wide Receiver,5
+Chase Young,Ohio St,26200300,Defensive Lineman,1
+Derrick Brown,Auburn,22000000,Defensive Lineman,2
+A.J. Epenesa,Iwoa,16000000,Defensive Lineman,3
+Javon Kinlaw,So. Carolina,18000000,'Defensive Lineman,4
+Yetur Gross-Matos,Penn St,13000000,Defensive Lineman,5
+Jeff Okudah,Ohio St,24000000,Defensive-Back,1
+Grant Delpit,LSU,22500249,Defensive-Back,2
+Kristian Fulton,LSU,20000100,Defensive-Back,3
+Xavier MCKinney,Alabama,16000200,Defensive-Back,4
+CJ Henderson,Florida,11899999,Defensive-Back,5
+Cole Kmet,Notre Dame,27800900,Tight Ends,1
+Brycen Hopkins,Purdue,21000800,Tight Ends,2
+Hunter Bryant,Washington,17499233,Tight Ends,3
+Jared Pinkey,Vanderbilt,27900200,Tight Ends,4
+Jacaob Breeland,Oregon,149000333,Tight Ends,5
+Isaiah Simmons,Clemson,22900300,Line Backers,1
+Kenneth Murray,Oklahoma,19000590,Line Backers,2
+Zack Baun,Wisconsin,180000222,Line Backers,3
+Akeem Davis-Gaither,App. St.,12999999,Line Backers,4
+Troy Dye,Oregon,10001100,Line Backers,5
+Jedrick Will Jr.,Alabama,23000000,Offensive Tackles,1
+Andrew Thomas,Georgia,20000000,Offensive Tackles,2
+Tristan Wirfs.,Iowa,19400000,Offensive Tackles,3
+Tyler Biadasz,Wisconsin,16200700,Offensive Tackles,4
+Mekhi Becton,Louisville,15900000,Offensive Tackles,5
