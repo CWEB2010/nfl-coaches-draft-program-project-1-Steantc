@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 
 namespace Project1
@@ -7,25 +8,31 @@ namespace Project1
     {
         static void Main(string[] args)
         {
+
+        int selection;
+        string exit;
+        int total = 0;
+        int pCounter = 0;
+
         string name;
         string origin;
         int price;
         string position;
         int rank;
-
-            string playerName;
-
+                        
+        string line;
 
             
-            string line;
+            
             int counter = 0;
 
             List<Player> playerList = new List<Player>();
-            // Read the file and display it line by line.
+            List<Player> selectedPlayers = new List<Player>();
+
             System.IO.StreamReader file =
                 new System.IO.StreamReader(@"C:\Users\steantc\source\repos\Project1\playerList.txt");
-            while ((line = file.ReadLine()) != null)
-            {
+
+            while ((line = file.ReadLine()) != null)    {
                 string[] variables = line.Split(',');
                 name = variables[0];
                 origin = variables[1];
@@ -34,32 +41,86 @@ namespace Project1
                 rank = Convert.ToInt32(variables[4]);
 
                 
-                        Player aPlayer = new Player(name, origin, price, position, rank);
+                        Player aPlayer = new Player(counter, name, origin, price, position, rank);
                         playerList.Add(aPlayer);
-                    
-                //Player player = new Player(name, origin, price, position, rank);
 
-                //playerVars[0](name, origin, price, position, rank);
-
-
-                //System.Console.WriteLine("{0} {1}", origin, name);
                 counter++;
+            }
+            Console.WriteLine("Welcome to the NFL Draft Program! Exit at any time by pressing 'x'. Press any other key to continue");
+            exit = Console.ReadLine();
+            Console.WriteLine("you may choose up to 5 players and may not exceed 95M in total payouts");
+            while (exit != "x")
+            {
+
                 playerList.ForEach(x => Console.WriteLine(x.ToString()));
-                //foreach (var x in playerList)
-                //    Console.WriteLine(x);
+
+                Console.WriteLine($"you have selected {pCounter} players and have spent ${total}");
+                Console.WriteLine("Please enter number for player that you want on your roster");
+                
+                selection = Convert.ToInt32(Console.ReadLine());
+                if (selection < 0 || selection > 39)
+                {
+                    Console.WriteLine("Player not availaible or already selected. Please select another Player");
+                    selection = Convert.ToInt32(Console.ReadLine());
+                }
+
+                
+
+                total += playerList[selection].price;
+                if (total > 95000000)
+                {
+                    Console.WriteLine("You've exceded the max amount of payouts. Please select another player");
+                    total -= playerList[selection].price;
+                    selection = Convert.ToInt32(Console.ReadLine());
+                    if (selection < 0 || selection > 39)
+                    {
+                        Console.WriteLine("Player not availaible. Please select another Player");
+                        selection = Convert.ToInt32(Console.ReadLine());
+                    }
+                }
+                else
+                {
+                    //if(selection == playerList[])
+
+                    //selectedPlayers.Add(playerList[selection]);
+                    playerList.ForEach(x =>
+                    {
+                        if(x.counter == selection && x.)
+                        {
+                            selectedPlayers.Add(playerList[selection]);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sorry, players is already selected");
+                        }
+                    });
+                    
+                }    
+
+                Console.WriteLine("Existing Players");
+                playerList.ForEach(x => Console.WriteLine(x.ToString()));
+
+                Console.WriteLine("Selected Players");
+                selectedPlayers.ForEach(x => Console.WriteLine(x.ToString()));
+
+                pCounter++;
+
+                if (pCounter == 5)
+                {
+                    Console.Clear();
+                    Console.WriteLine("You have reached the maximum amount of players. Here is your roster");
+                    selectedPlayers.ForEach(x => Console.WriteLine(x.ToString()));
+                    Console.WriteLine("To exit program please press the 'x' key");
+                    exit = Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("to continue press any button. To exit press 'x'");
+                    exit = Console.ReadLine();
+                }
 
             }
-
             file.Close();
-
-            
-
-            //Player aPlayer = new Player();
-            
-
-
-
-
         }
     }
     class Player
@@ -69,18 +130,11 @@ namespace Project1
         public int price { get; set; }
         public string position { get; set; }
         public int rank { get; set; }
+        public int counter { get; set; }
 
-        //public Player();
-        //{
-        //    //this.name = "name";
-        //    //this.origin = "origin";
-        //    //this.price = 00;
-        //    //this.position = "position";
-        //    //this.rank = 00;
-        //    }
-
-        public Player(string name, string origin, int price, string position, int rank)
+        public Player(int counter, string name, string origin, int price, string position, int rank)
         {
+            this.counter = counter;
             this.name = name;
             this.origin = origin;
             this.price = price;
@@ -90,7 +144,7 @@ namespace Project1
 
         public override string ToString()
         {
-            return String.Format($"Name:{name}, Origin:{origin}, Price:{price}, Postition{position}, Rank:{rank}");
+            return String.Format($"{counter} Name:{name}, Origin:{origin}, Price:{price}, Postition{position}, Rank:{rank}");
         }
 
     }

@@ -27,10 +27,10 @@ Cole Kmet,Notre Dame,27800900,Tight Ends,1
 Brycen Hopkins,Purdue,21000800,Tight Ends,2
 Hunter Bryant,Washington,17499233,Tight Ends,3
 Jared Pinkey,Vanderbilt,27900200,Tight Ends,4
-Jacaob Breeland,Oregon,149000333,Tight Ends,5
+Jacaob Breeland,Oregon,14900333,Tight Ends,5
 Isaiah Simmons,Clemson,22900300,Line Backers,1
 Kenneth Murray,Oklahoma,19000590,Line Backers,2
-Zack Baun,Wisconsin,180000222,Line Backers,3
+Zack Baun,Wisconsin,18000222,Line Backers,3
 Akeem Davis-Gaither,App. St.,12999999,Line Backers,4
 Troy Dye,Oregon,10001100,Line Backers,5
 Jedrick Will Jr.,Alabama,23000000,Offensive Tackles,1
