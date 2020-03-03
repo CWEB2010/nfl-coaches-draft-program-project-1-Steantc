@@ -60,7 +60,7 @@ namespace Project1
                 Console.WriteLine("Please enter number for player that you want on your roster");
                 
                 selection = Convert.ToInt32(Console.ReadLine());
-                if (selection < 0 || selection > 39 || playerList[selection].picked == true)
+                while (selection < 0 || selection > 39 || playerList[selection].picked == true)
                 {
                     Console.WriteLine("Player not availaible or already selected. Please select another Player");
                     selection = Convert.ToInt32(Console.ReadLine());
