@@ -19,6 +19,7 @@ namespace Project1
         int price;
         string position;
         int rank;
+        bool picked;
                         
         string line;
 
@@ -39,9 +40,10 @@ namespace Project1
                 price = Convert.ToInt32(variables[2]);
                 position = variables[3];
                 rank = Convert.ToInt32(variables[4]);
+                picked = false;
 
                 
-                        Player aPlayer = new Player(counter, name, origin, price, position, rank);
+                        Player aPlayer = new Player(counter, name, origin, price, position, rank, picked);
                         playerList.Add(aPlayer);
 
                 counter++;
@@ -58,7 +60,7 @@ namespace Project1
                 Console.WriteLine("Please enter number for player that you want on your roster");
                 
                 selection = Convert.ToInt32(Console.ReadLine());
-                if (selection < 0 || selection > 39)
+                if (selection < 0 || selection > 39 || playerList[selection].picked == true)
                 {
                     Console.WriteLine("Player not availaible or already selected. Please select another Player");
                     selection = Convert.ToInt32(Console.ReadLine());
@@ -72,7 +74,7 @@ namespace Project1
                     Console.WriteLine("You've exceded the max amount of payouts. Please select another player");
                     total -= playerList[selection].price;
                     selection = Convert.ToInt32(Console.ReadLine());
-                    if (selection < 0 || selection > 39)
+                    if (selection < 0 || selection > 39 || playerList[selection].picked == true)
                     {
                         Console.WriteLine("Player not availaible. Please select another Player");
                         selection = Convert.ToInt32(Console.ReadLine());
@@ -80,22 +82,9 @@ namespace Project1
                 }
                 else
                 {
-                    //if(selection == playerList[])
-
-                    //selectedPlayers.Add(playerList[selection]);
-                    playerList.ForEach(x =>
-                    {
-                        if(x.counter == selection && x.)
-                        {
-                            selectedPlayers.Add(playerList[selection]);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Sorry, players is already selected");
-                        }
-                    });
-                    
-                }    
+                    selectedPlayers.Add(playerList[selection]);
+                    playerList[selection].picked = true;
+                }
 
                 Console.WriteLine("Existing Players");
                 playerList.ForEach(x => Console.WriteLine(x.ToString()));
@@ -131,8 +120,9 @@ namespace Project1
         public string position { get; set; }
         public int rank { get; set; }
         public int counter { get; set; }
+        public bool picked { get; set; }
 
-        public Player(int counter, string name, string origin, int price, string position, int rank)
+        public Player(int counter, string name, string origin, int price, string position, int rank, bool picked)
         {
             this.counter = counter;
             this.name = name;
@@ -140,6 +130,7 @@ namespace Project1
             this.price = price;
             this.position = position;
             this.rank = rank;
+            this.picked = picked;
         }
 
         public override string ToString()
